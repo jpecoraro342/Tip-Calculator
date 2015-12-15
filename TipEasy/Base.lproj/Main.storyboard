@@ -47,11 +47,14 @@
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="$100.00" textAlignment="natural" minimumFontSize="17" id="Nrl-zQ-2eK">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="$100.00" textAlignment="right" minimumFontSize="17" id="Nrl-zQ-2eK">
                                 <rect key="frame" x="205" y="43" width="97" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" keyboardType="decimalPad"/>
+                                <connections>
+                                    <action selector="onEditChanged:" destination="BYZ-38-t0r" eventType="editingChanged" id="8ft-Su-ouH"/>
+                                </connections>
                             </textField>
                             <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" id="ox7-w3-Fz5">
                                 <rect key="frame" x="22" y="236" width="280" height="29"/>
@@ -61,12 +64,30 @@
                                     <segment title="20%"/>
                                     <segment title="22%"/>
                                 </segments>
+                                <connections>
+                                    <action selector="onEditChanged:" destination="BYZ-38-t0r" eventType="valueChanged" id="HkV-Ae-d4u"/>
+                                </connections>
                             </segmentedControl>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <gestureRecognizers/>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="pYs-ar-c6D" appends="YES" id="FhB-QV-gQm"/>
+                        </connections>
                     </view>
+                    <connections>
+                        <outlet property="billAmountField" destination="Nrl-zQ-2eK" id="7Sb-Hn-f1k"/>
+                        <outlet property="tipControl" destination="ox7-w3-Fz5" id="6zK-tg-JDu"/>
+                        <outlet property="tipLabel" destination="Flw-AY-UFz" id="Xn8-BV-dZ2"/>
+                        <outlet property="totalLabel" destination="XJF-Dm-WGG" id="OWh-ab-vha"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="pYs-ar-c6D">
+                    <connections>
+                        <action selector="backgroundTapped:" destination="BYZ-38-t0r" id="Cxk-QZ-A1u"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="301" y="472"/>
         </scene>
