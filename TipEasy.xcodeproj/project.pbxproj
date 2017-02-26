@@ -18,6 +18,9 @@
 		159C68321C20C1F900A5E9DE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 159C68311C20C1F900A5E9DE /* Assets.xcassets */; };
 		159C68351C20C1F900A5E9DE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 159C68331C20C1F900A5E9DE /* LaunchScreen.storyboard */; };
 		15AC97AC1E6270EA0086098C /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15AC97AB1E6270EA0086098C /* Constants.swift */; };
+		15AC97B31E627B3A0086098C /* Fabric.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 15AC97B11E627B3A0086098C /* Fabric.framework */; };
+		15AC97B41E627B3A0086098C /* Crashlytics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 15AC97B21E627B3A0086098C /* Crashlytics.framework */; };
+		15AC97B61E627BAA0086098C /* AnalyticsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15AC97B51E627BAA0086098C /* AnalyticsManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -44,6 +47,9 @@
 		159C68341C20C1F900A5E9DE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		159C68361C20C1F900A5E9DE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		15AC97AB1E6270EA0086098C /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		15AC97B11E627B3A0086098C /* Fabric.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Fabric.framework; sourceTree = "<group>"; };
+		15AC97B21E627B3A0086098C /* Crashlytics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Crashlytics.framework; sourceTree = "<group>"; };
+		15AC97B51E627BAA0086098C /* AnalyticsManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnalyticsManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +64,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				15AC97B41E627B3A0086098C /* Crashlytics.framework in Frameworks */,
+				15AC97B31E627B3A0086098C /* Fabric.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -114,10 +122,11 @@
 				1596DEFA1D6A6A8300177863 /* Tip Calculator */,
 				1596DEF91D6A6A7200177863 /* Class Extensions */,
 				159C682A1C20C1F900A5E9DE /* AppDelegate.swift */,
+				15AC97B51E627BAA0086098C /* AnalyticsManager.swift */,
 				159C682C1C20C1F900A5E9DE /* TipCalculatorVC.swift */,
 				159C682E1C20C1F900A5E9DE /* Main.storyboard */,
 				159C68331C20C1F900A5E9DE /* LaunchScreen.storyboard */,
-				159C68361C20C1F900A5E9DE /* Info.plist */,
+				15AC97B01E627B260086098C /* Frameworks */,
 				15AC97AE1E6277A90086098C /* Resources */,
 			);
 			path = TipEasy;
@@ -134,9 +143,19 @@
 		15AC97AE1E6277A90086098C /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				159C68361C20C1F900A5E9DE /* Info.plist */,
 				159C68311C20C1F900A5E9DE /* Assets.xcassets */,
 			);
 			name = Resources;
+			sourceTree = "<group>";
+		};
+		15AC97B01E627B260086098C /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				15AC97B11E627B3A0086098C /* Fabric.framework */,
+				15AC97B21E627B3A0086098C /* Crashlytics.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -167,6 +186,7 @@
 				159C68231C20C1F900A5E9DE /* Sources */,
 				159C68241C20C1F900A5E9DE /* Frameworks */,
 				159C68251C20C1F900A5E9DE /* Resources */,
+				15AC97AF1E627AFC0086098C /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -184,7 +204,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0730;
-				LastUpgradeCheck = 0720;
+				LastUpgradeCheck = 0820;
 				ORGANIZATIONNAME = "Joseph Pecoraro";
 				TargetAttributes = {
 					1596DEE81D65205C00177863 = {
@@ -194,6 +214,7 @@
 					};
 					159C68261C20C1F900A5E9DE = {
 						CreatedOnToolsVersion = 7.2;
+						DevelopmentTeam = CX87MDXJNH;
 						LastSwiftMigration = 0820;
 					};
 				};
@@ -237,6 +258,22 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		15AC97AF1E627AFC0086098C /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "./Fabric.framework/run 6ae97504a9d882e5fa44018e6722163d2835044f 26c6fae0580a046391251cc64a3e02e8b4a763845282b2b17de4371e9f2d117b";
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		1596DEE51D65205C00177863 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -252,6 +289,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				15AC97B61E627BAA0086098C /* AnalyticsManager.swift in Sources */,
 				159C682D1C20C1F900A5E9DE /* TipCalculatorVC.swift in Sources */,
 				159C682B1C20C1F900A5E9DE /* AppDelegate.swift in Sources */,
 				1596DEF41D65208800177863 /* TipRounder.swift in Sources */,
@@ -333,8 +371,10 @@
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
@@ -377,8 +417,10 @@
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
@@ -397,6 +439,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
 				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;
@@ -405,6 +448,11 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = CX87MDXJNH;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/TipEasy",
+				);
 				INFOPLIST_FILE = TipEasy/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -418,6 +466,11 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = CX87MDXJNH;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/TipEasy",
+				);
 				INFOPLIST_FILE = TipEasy/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";

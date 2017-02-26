@@ -21,8 +21,8 @@ class TipCalculatorVC: UIViewController {
                 return tipPercent
             }
             else {
-                self.tipPercent = 18.0;
-                return 18.0;
+                self.tipPercent = 0.18;
+                return 0.18;
             }
         }
         set {
@@ -50,8 +50,9 @@ class TipCalculatorVC: UIViewController {
     }
     
     var currentTipAmount: Double = 0.0
-    
     var roundedTipPercent: Double = 0.0
+    
+    let analyticsManager = AnalyticsManager.sharedInstance
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -101,6 +102,7 @@ class TipCalculatorVC: UIViewController {
     
     @IBAction func tipPercentChanged(_ sender: AnyObject) {
         tipPercent = NSString(string: tipPercentField.text!).doubleValue/100.0
+        analyticsManager.tipPercentChanged(tipPercent: tipPercent)
         updateTip()
     }
     
@@ -134,12 +136,14 @@ class TipCalculatorVC: UIViewController {
         let roundFactor = getCurrencyAsNumber((sender.titleLabel?.text)!)
         let newTotal = TipRounder.roundUp(NSDecimalNumber(value: billAmount + currentTipAmount as Double), roundAmount: roundFactor)
         tipRounded(newTotal)
+        analyticsManager.tipRounded(roundAmount: roundFactor)
     }
     
     @IBAction func roundDown(_ sender: UIButton) {
         let roundFactor = getCurrencyAsNumber((sender.titleLabel?.text)!)
         let newTotal = TipRounder.roundDown(NSDecimalNumber(value: billAmount + currentTipAmount as Double), roundAmount: roundFactor)
         tipRounded(newTotal)
+        analyticsManager.tipRounded(roundAmount: roundFactor)
     }
     
     func getCurrencyAsNumber(_ currency: String) -> NSDecimalNumber {
