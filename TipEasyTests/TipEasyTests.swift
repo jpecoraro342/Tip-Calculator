@@ -22,7 +22,7 @@ class TipRoundingTests: XCTestCase {
     
     func testRoundUpDime() {
         var actual = TipRounder.roundUp(1.30, roundAmount: 0.1)
-        var expected = NSDecimalNumber(double: 1.4)
+        var expected = NSDecimalNumber(value: 1.4 as Double)
         XCTAssert(actual == expected, "Expected: \(expected) Was: \(actual)")
         
         actual = TipRounder.roundUp(1.00, roundAmount: 0.1)
@@ -40,7 +40,7 @@ class TipRoundingTests: XCTestCase {
     
     func testRoundDownDime() {
         var actual = TipRounder.roundDown(1.30, roundAmount: 0.1)
-        var expected = NSDecimalNumber(double: 1.20)
+        var expected = NSDecimalNumber(value: 1.20 as Double)
         XCTAssert(actual == expected, "Expected: \(expected) Was: \(actual)")
         
         actual = TipRounder.roundDown(1.00, roundAmount: 0.1)
@@ -58,7 +58,7 @@ class TipRoundingTests: XCTestCase {
     
     func testRoundUpQuarter() {
         var actual = TipRounder.roundUp(1.30, roundAmount: 0.25)
-        var expected = NSDecimalNumber(double: 1.50)
+        var expected = NSDecimalNumber(value: 1.50 as Double)
         XCTAssert(actual == expected, "Expected: \(expected) Was: \(actual)")
         
         actual = TipRounder.roundUp(1.00, roundAmount: 0.25)
@@ -76,7 +76,7 @@ class TipRoundingTests: XCTestCase {
     
     func testRoundDownQuarter() {
         var actual = TipRounder.roundDown(1.30, roundAmount: 0.25)
-        var expected = NSDecimalNumber(double: 1.25)
+        var expected = NSDecimalNumber(value: 1.25 as Double)
         XCTAssert(actual == expected, "Expected: \(expected) Was: \(actual)")
         
         actual = TipRounder.roundDown(1.00, roundAmount: 0.25)
@@ -95,7 +95,7 @@ class TipRoundingTests: XCTestCase {
     
     func testRoundUpDollar() {
         var actual = TipRounder.roundUp(1.30, roundAmount: 1)
-        var expected = NSDecimalNumber(double: 2.0)
+        var expected = NSDecimalNumber(value: 2.0 as Double)
         XCTAssert(actual == expected, "Expected: \(expected) Was: \(actual)")
         
         actual = TipRounder.roundUp(1.00, roundAmount: 1)
@@ -113,7 +113,7 @@ class TipRoundingTests: XCTestCase {
     
     func testRoundDownDollar() {
         var actual = TipRounder.roundDown(1.30, roundAmount: 1)
-        var expected = NSDecimalNumber(double: 1.0)
+        var expected = NSDecimalNumber(value: 1.0 as Double)
         
         XCTAssert(actual == expected, "Expected: \(expected) Was: \(actual)")
         

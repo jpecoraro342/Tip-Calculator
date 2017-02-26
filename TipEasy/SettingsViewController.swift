@@ -13,7 +13,7 @@ class SettingsViewController: UIViewController {
     @IBOutlet weak var tipControl: UISegmentedControl!
     
     
-    @IBAction func defaultTipValueChanged(sender: AnyObject) {
+    @IBAction func defaultTipValueChanged(_ sender: AnyObject) {
         
     }
 }

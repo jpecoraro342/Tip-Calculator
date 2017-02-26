@@ -15,11 +15,9 @@ class ViewController: UIViewController {
     @IBOutlet weak var tipLabel: UILabel!
     @IBOutlet weak var totalLabel: UILabel!
     
-    let currencyFormatter: NSNumberFormatter = NSNumberFormatter()
-    
     var tipPercent: Double {
         get {
-            if let tipPercent = NSUserDefaults.standardUserDefaults().objectForKey("DefaultTipPercent") as? Double {
+            if let tipPercent = UserDefaults.standard.object(forKey: "DefaultTipPercent") as? Double {
                 return tipPercent
             }
             else {
@@ -28,7 +26,7 @@ class ViewController: UIViewController {
             }
         }
         set {
-            NSUserDefaults.standardUserDefaults().setObject(newValue, forKey: "DefaultTipPercent")
+            UserDefaults.standard.set(newValue, forKey: "DefaultTipPercent")
         }
     }
     
@@ -40,14 +38,14 @@ class ViewController: UIViewController {
     
     var billAmount: Double {
         get {
-            if let billAmount = NSUserDefaults.standardUserDefaults().objectForKey("BillAmount") as? Double {
+            if let billAmount = UserDefaults.standard.object(forKey: "BillAmount") as? Double {
                 return billAmount
             }
             self.billAmount = 0
             return 0;
         }
         set {
-            NSUserDefaults.standardUserDefaults().setObject(newValue, forKey: "BillAmount")
+            UserDefaults.standard.set(newValue, forKey: "BillAmount")
         }
     }
     
@@ -57,10 +55,6 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        currencyFormatter.numberStyle = .CurrencyStyle
-        currencyFormatter.generatesDecimalNumbers = true
-        currencyFormatter.locale = NSLocale.currentLocale()
         
         tipPercentField.text = getPercentFormat(tipPercent)
         billAmountField.text = getCurrencyFormat(billAmount)
@@ -73,7 +67,7 @@ class ViewController: UIViewController {
         updateTip()
     }
     
-    override func viewWillAppear(animated: Bool) {
+    override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated);
         self.billAmountField.becomeFirstResponder()
     }
@@ -84,7 +78,7 @@ class ViewController: UIViewController {
         totalLabel.text = getCurrencyFormat(billAmount + tipAmount);
     }
     
-    func tipRounded(newTotal: NSDecimalNumber) {
+    func tipRounded(_ newTotal: NSDecimalNumber) {
         currentTipAmount = newTotal.doubleValue - billAmount
         roundedTipPercent = currentTipAmount / billAmount
         totalLabel.text = getCurrencyFormat(billAmount + currentTipAmount)
@@ -92,62 +86,64 @@ class ViewController: UIViewController {
         tipPercentField.text = getPercentFormat(roundedTipPercent);
     }
     
-    @IBAction func billAmountChanged(sender: AnyObject) {
+    @IBAction func billAmountChanged(_ sender: AnyObject) {
         billAmount = NSString(string: billAmountField.text!).doubleValue
         updateTip()
     }
     
-    @IBAction func billEditingBegan(sender: AnyObject) {
+    @IBAction func billEditingBegan(_ sender: AnyObject) {
         billAmountField.text = "";
     }
     
-    @IBAction func billEditingEnded(sender: AnyObject) {
+    @IBAction func billEditingEnded(_ sender: AnyObject) {
         billAmountField.text = getCurrencyFormat(NSString(string: billAmountField.text!).doubleValue)
     }
     
-    @IBAction func tipPercentChanged(sender: AnyObject) {
+    @IBAction func tipPercentChanged(_ sender: AnyObject) {
         tipPercent = NSString(string: tipPercentField.text!).doubleValue/100.0
         updateTip()
     }
     
-    @IBAction func tipEditingBegan(sender: AnyObject) {
+    @IBAction func tipEditingBegan(_ sender: AnyObject) {
         tipPercentField.text = "";
     }
     
-    @IBAction func tipEditingEnded(sender: AnyObject) {
+    @IBAction func tipEditingEnded(_ sender: AnyObject) {
         tipPercentField.text = getPercentFormat(NSString(string: tipPercentField.text!).doubleValue/100.0)
     }
     
-    func getCurrencyFormat(price: Double) -> String {
-        let convertedPrice = currencyFormatter.stringFromNumber(price)
+    func getCurrencyFormat(_ price: Double) -> String {
+        let convertedPrice = currencyFormatter.string(from: price as NSNumber)
         return convertedPrice!
     }
     
-    func getPercentFormat(percent: Double) -> String {
-        let formatter = NSNumberFormatter()
-        formatter.numberStyle = .PercentStyle
-        formatter.minimumFractionDigits = 1
-        return formatter.stringFromNumber(percent)!;
+    func getPercentFormat(_ percent: Double) -> String {
+        if let percentString = percentFormatter.string(from: percent as NSNumber) {
+            return percentString
+        }
+        else {
+            return "0%"
+        }
     }
     
-    @IBAction func backgroundTapped(sender: AnyObject) {
+    @IBAction func backgroundTapped(_ sender: AnyObject) {
         self.view.endEditing(true);
     }
     
-    @IBAction func roundUp(sender: UIButton) {
+    @IBAction func roundUp(_ sender: UIButton) {
         let roundFactor = getCurrencyAsNumber((sender.titleLabel?.text)!)
-        let newTotal = TipRounder.roundUp(NSDecimalNumber(double: billAmount + currentTipAmount), roundAmount: roundFactor)
+        let newTotal = TipRounder.roundUp(NSDecimalNumber(value: billAmount + currentTipAmount as Double), roundAmount: roundFactor)
         tipRounded(newTotal)
     }
     
-    @IBAction func roundDown(sender: UIButton) {
+    @IBAction func roundDown(_ sender: UIButton) {
         let roundFactor = getCurrencyAsNumber((sender.titleLabel?.text)!)
-        let newTotal = TipRounder.roundDown(NSDecimalNumber(double: billAmount + currentTipAmount), roundAmount: roundFactor)
+        let newTotal = TipRounder.roundDown(NSDecimalNumber(value: billAmount + currentTipAmount as Double), roundAmount: roundFactor)
         tipRounded(newTotal)
     }
     
-    func getCurrencyAsNumber(currency: String) -> NSDecimalNumber {
-        return currencyFormatter.numberFromString(currency) as! NSDecimalNumber
+    func getCurrencyAsNumber(_ currency: String) -> NSDecimalNumber {
+        return currencyFormatter.number(from: currency) as! NSDecimalNumber
     }
     
     override func didReceiveMemoryWarning() {

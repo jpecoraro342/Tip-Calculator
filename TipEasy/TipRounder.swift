@@ -10,7 +10,7 @@ import Foundation
 
 class TipRounder: NSObject {
     
-    static func roundUp(value: NSDecimalNumber, roundAmount: NSDecimalNumber) -> NSDecimalNumber {
+    static func roundUp(_ value: NSDecimalNumber, roundAmount: NSDecimalNumber) -> NSDecimalNumber {
         let roundedValue = round(value, roundAmount: roundAmount);
         if roundedValue > value {
             return roundedValue
@@ -19,7 +19,7 @@ class TipRounder: NSObject {
         return roundedValue + roundAmount;
     }
     
-    static func roundDown(value: NSDecimalNumber, roundAmount: NSDecimalNumber) -> NSDecimalNumber  {
+    static func roundDown(_ value: NSDecimalNumber, roundAmount: NSDecimalNumber) -> NSDecimalNumber  {
         let roundedValue = round(value, roundAmount: roundAmount);
         if roundedValue < value {
             return roundedValue
@@ -28,8 +28,8 @@ class TipRounder: NSObject {
         return roundedValue - roundAmount;
     }
     
-    static func round(value: NSDecimalNumber, roundAmount: NSDecimalNumber) -> NSDecimalNumber {
-        return (value / roundAmount).decimalNumberByRoundingAccordingToBehavior(nil) * roundAmount;
+    static func round(_ value: NSDecimalNumber, roundAmount: NSDecimalNumber) -> NSDecimalNumber {
+        return (value / roundAmount).rounding(accordingToBehavior: nil) * roundAmount;
     }
     
 }
