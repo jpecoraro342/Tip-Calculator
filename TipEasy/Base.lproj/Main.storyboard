@@ -1,29 +1,33 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" initialViewController="YFa-Dw-CXP">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="15G1004" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" colorMatched="YES" initialViewController="YFa-Dw-CXP">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
         <!--Tip Calculator-->
         <scene sceneID="Ge8-dP-QOQ">
             <objects>
-                <viewController id="YFa-Dw-CXP" customClass="ViewController" customModule="TipEasy" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="YFa-Dw-CXP" customClass="TipCalculatorVC" customModule="TipEasy" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="mhi-bh-S6U">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Bill" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="VlV-WV-AcC">
                                 <rect key="frame" x="22" y="35" width="23" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tip" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="zwG-3a-onz">
                                 <rect key="frame" x="20" y="70" width="25" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="$100.00" textAlignment="right" minimumFontSize="17" id="nyX-zL-6aB">
@@ -41,21 +45,21 @@
                                 <rect key="frame" x="20" y="104" width="68" height="36"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="30"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="$100.00" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="15" id="Zte-nt-veX">
                                 <rect key="frame" x="182" y="104" width="138" height="36"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="30"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="kc8-Cx-bvA">
                                 <rect key="frame" x="83" y="177" width="38" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="$0.10">
-                                    <color key="titleColor" red="0.13231241360000001" green="0.70750473479999998" blue="0.32254769090000002" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleColor" red="0.13231241360000001" green="0.70750473479999998" blue="0.32254769090000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                                 <connections>
                                     <action selector="roundUp:" destination="YFa-Dw-CXP" eventType="touchUpInside" id="Pp1-Mr-KT2"/>
@@ -65,7 +69,7 @@
                                 <rect key="frame" x="129" y="177" width="40" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="$0.25">
-                                    <color key="titleColor" red="0.13231241360000001" green="0.70750473479999998" blue="0.32254769090000002" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleColor" red="0.13231241360000001" green="0.70750473479999998" blue="0.32254769090000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                                 <connections>
                                     <action selector="roundUp:" destination="YFa-Dw-CXP" eventType="touchUpInside" id="dLK-WU-Mnk"/>
@@ -75,7 +79,7 @@
                                 <rect key="frame" x="177" y="177" width="41" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="$0.50">
-                                    <color key="titleColor" red="0.13231241360000001" green="0.70750473479999998" blue="0.32254769090000002" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleColor" red="0.13231241360000001" green="0.70750473479999998" blue="0.32254769090000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                                 <connections>
                                     <action selector="roundUp:" destination="YFa-Dw-CXP" eventType="touchUpInside" id="5av-Fk-t6W"/>
@@ -85,7 +89,7 @@
                                 <rect key="frame" x="228" y="177" width="38" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="$1.00">
-                                    <color key="titleColor" red="0.13231241360000001" green="0.70750473479999998" blue="0.32254769090000002" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleColor" red="0.13231241360000001" green="0.70750473479999998" blue="0.32254769090000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                                 <connections>
                                     <action selector="roundUp:" destination="YFa-Dw-CXP" eventType="touchUpInside" id="2PQ-vC-p8m"/>
@@ -95,7 +99,7 @@
                                 <rect key="frame" x="83" y="207" width="38" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="$0.10">
-                                    <color key="titleColor" red="0.84081044819999995" green="0.06111440261" blue="0.1306116222" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleColor" red="0.84081044819999995" green="0.06111440261" blue="0.1306116222" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                                 <connections>
                                     <action selector="roundDown:" destination="YFa-Dw-CXP" eventType="touchUpInside" id="JAR-OC-mEn"/>
@@ -105,7 +109,7 @@
                                 <rect key="frame" x="129" y="207" width="40" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="$0.25">
-                                    <color key="titleColor" red="0.84081044819999995" green="0.06111440261" blue="0.1306116222" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleColor" red="0.84081044819999995" green="0.06111440261" blue="0.1306116222" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                                 <connections>
                                     <action selector="roundDown:" destination="YFa-Dw-CXP" eventType="touchUpInside" id="s8D-d8-Ulb"/>
@@ -115,7 +119,7 @@
                                 <rect key="frame" x="177" y="207" width="41" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="$0.50">
-                                    <color key="titleColor" red="0.84081044819999995" green="0.06111440261" blue="0.1306116222" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleColor" red="0.84081044819999995" green="0.06111440261" blue="0.1306116222" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                                 <connections>
                                     <action selector="roundDown:" destination="YFa-Dw-CXP" eventType="touchUpInside" id="uWC-eH-0bd"/>
@@ -125,7 +129,7 @@
                                 <rect key="frame" x="228" y="207" width="38" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="$1.00">
-                                    <color key="titleColor" red="0.84081044819999995" green="0.06111440261" blue="0.1306116222" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleColor" red="0.84081044819999995" green="0.06111440261" blue="0.1306116222" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                                 <connections>
                                     <action selector="roundDown:" destination="YFa-Dw-CXP" eventType="touchUpInside" id="0oi-qU-Ogd"/>
@@ -135,21 +139,21 @@
                                 <rect key="frame" x="123" y="148" width="50" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Up" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="cWf-L7-rHv">
                                 <rect key="frame" x="47" y="181" width="28" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Down" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Nhu-tT-MyX">
                                 <rect key="frame" x="31" y="211" width="44" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="18%" textAlignment="right" minimumFontSize="17" id="e2x-m9-g5k">
@@ -167,11 +171,11 @@
                                 <rect key="frame" x="184" y="70" width="82" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <gestureRecognizers/>
                         <connections>
                             <outletCollection property="gestureRecognizers" destination="3mb-0T-RJz" appends="YES" id="A6n-dt-yrj"/>
@@ -197,4 +201,9 @@
             <point key="canvasLocation" x="607" y="471"/>
         </scene>
     </scenes>
+    <simulatedMetricsContainer key="defaultSimulatedMetrics">
+        <simulatedStatusBarMetrics key="statusBar"/>
+        <simulatedOrientationMetrics key="orientation"/>
+        <simulatedScreenMetrics key="destination" type="retina4_7.fullscreen"/>
+    </simulatedMetricsContainer>
 </document>

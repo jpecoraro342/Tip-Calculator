@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class TipCalculatorVC: UIViewController {
     
     @IBOutlet weak var billAmountField: UITextField!
     @IBOutlet weak var tipPercentField: UITextField!
